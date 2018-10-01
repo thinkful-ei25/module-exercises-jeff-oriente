@@ -27,6 +27,14 @@ const store = (function () {
           let foundItem = store.findById(id);
           foundItem.checked = !foundItem.checked;
         }
+
+        const toggleCheckedFilter = function() {
+          this.hideCheckedItems = !this.hideCheckedItems;
+        }
+
+        const setSearchTerm = function(searchItem) {
+          this.searchTerm = `${searchItem}`;
+        }
         
         const findAndUpdateName = function(id, newName) {
           try {
@@ -50,8 +58,9 @@ const store = (function () {
             addItem,
             findAndToggleChecked,
             findAndUpdateName,
-            findAndDelete
-
+            findAndDelete,
+            toggleCheckedFilter,
+            setSearchTerm
         }
       
 }() );
