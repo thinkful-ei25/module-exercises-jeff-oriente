@@ -11,7 +11,7 @@ const store = (function () {
         let searchTerm = '';
 
         const findById = function(id) {
-          store.items.find(item => item.id === id);
+          return store.items.find(item => item.id === id);
         };
 
         const addItem = function(name) {
@@ -24,14 +24,14 @@ const store = (function () {
         }
 
         const findAndToggleChecked = function(id) {
-          let foundItem = this.findById(id);
+          let foundItem = store.findById(id);
           foundItem.checked = !foundItem.checked;
         }
         
         const findAndUpdateName = function(id, newName) {
           try {
             Item.validateName(newName);
-            let foundItem = this.findById(id);
+            let foundItem = store.findById(id);
             foundItem.name = newName;
           } catch(err) {
               console.error(`Cannot update name: ${err.message}`);
