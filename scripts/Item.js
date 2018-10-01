@@ -4,8 +4,9 @@
 const Item = (function() {
   
   const validateName = function(name) {
-    if (!name) {
-      throw 'Name does not exist';
+    console.log('Validate Name Ran', name);
+    if (!name || name === undefined) {
+      throw new Error('Name must be provided');
     }
   };
 
