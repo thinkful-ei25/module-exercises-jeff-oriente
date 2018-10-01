@@ -5,5 +5,3 @@ $(document).ready(function() {
 });
 
 
-console.log(store);
-console.log(foo);
